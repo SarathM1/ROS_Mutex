@@ -1,15 +1,5 @@
-#include <fstream>
-#include <iostream>
-#include <string>
-
 #include "boost/interprocess/sync/named_mutex.hpp"
-#include "boost/interprocess/sync/scoped_lock.hpp"
-#include "boost/thread/thread.hpp"
-
 #include "ros/ros.h"
-#include "std_msgs/String.h"
-
-#include <sstream>
 using namespace boost::interprocess;
 
 int main(int argc, char **argv) {
