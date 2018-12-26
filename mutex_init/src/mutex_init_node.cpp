@@ -14,20 +14,13 @@ using namespace boost::interprocess;
 
 int main(int argc, char **argv) {
     // This type of initialisation requires C++11
-    named_mutex named_mtx{open_or_create, "mtx"};
-    ROS_INFO("Node1 Waiting for lock to release");
-    named_mtx.lock();
-    ROS_INFO("Node1 running. .");
-    ros::init(argc, argv, "talker");
-    ros::NodeHandle n;
-    ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-
-    ros::Rate loop_rate(1);
-    for(int i=5;i>0;i--)
-    {
-        ROS_INFO("%d", i);
-        loop_rate.sleep();
-    }
-    named_mtx.unlock();
+    named_mutex named_mtx1{open_or_create, "mtx1"};
+    named_mutex named_mtx2{open_or_create, "mtx2"};
+    ROS_INFO("Locking mtx1");
+    named_mtx1.lock();
+    ROS_INFO("Locking mtx2");
+    named_mtx2.lock();
+    ROS_INFO("\tUnlocking mtx1");
+    named_mtx1.unlock();
     return 0;
 }
