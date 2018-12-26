@@ -1,0 +1,6 @@
+<launch>
+  <node name="node1" pkg="node1_mutex" output="screen" type="node1_mutex_node">
+
+  </node>
+  <node name="node2" pkg="node2_mutex" output="screen" type="node2_mutex_node" />
+</launch>
