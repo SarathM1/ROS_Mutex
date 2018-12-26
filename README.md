@@ -1,5 +1,5 @@
 # ROS_Mutex
-Method to use **Boost _named_mutex_** to launch nodes in a specific order.
+Method to use **Boost _named-mutex_** to launch nodes in a specific order.
 
 ## Dependencies
 - Boost
