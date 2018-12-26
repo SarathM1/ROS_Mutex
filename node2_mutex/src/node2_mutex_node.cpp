@@ -10,12 +10,12 @@ int main(int argc, char **argv) {
     ROS_INFO("Node2 Waiting for lock to release");
     named_mtx2.lock();
     ROS_INFO("Node2 running. .");
-    ros::init(argc, argv, "talker");
+    ros::init(argc, argv, "node2");
     ros::NodeHandle nh;
     ros::Rate loop_rate(1);
     for(int i=5;i>0;i--)
     {
-        ROS_INFO("Node2 %d", i);
+        ROS_INFO("\tNode2 %d", i);
         loop_rate.sleep();
     }
     named_mtx2.unlock();

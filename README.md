@@ -3,19 +3,35 @@ Method to use *Boost named_mutex* to launch nodes in a specific order.
 
 ## Dependencies
 - Boost
+'''sh
+sudo apt install libboost1.58-all-dev
+'''
+  - Edit CMakeLists.txt and add Boost. Refer the given CMakeLists.txt
 - C++ 11
+  - Edit CMakeLists.txt and add following line
+'''cmake
+add_compile_options(-std=c++11)
+'''
 
 ## Setup
 - Create a catkin workspace
-  - mkdir ~/catkin_ws
-  - cd ~/catkin_ws
+'''sh
+mkdir ~/catkin_ws
+cd ~/catkin_ws
+'''
 - Clone this repository
-  - git clone https://github.com/SarathM1/ROS_Mutex.git ~/catkin_ws/src
+'''sh
+git clone https://github.com/SarathM1/ROS_Mutex.git ~/catkin_ws/src
+'''
 - Build using catkin_make
-  - catkin_make
+'''sh
+catkin_make
+'''
 
 ## Running the code
-  roslaunch mutex_init launchFile.launch
+'''sh
+roslaunch mutex_init launchFile.launch
+'''
 
 ## Notes
 - mutex_init_node of mutex_init package must run before all nodes
