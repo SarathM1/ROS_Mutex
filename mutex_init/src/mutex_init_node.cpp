@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     named_mtx3.lock();
 
     // Unlock only the first mutex so that node1 starts to run
-    ROS_INFO("\tUnlocking mtx1");
+    ROS_INFO("Unlocking mtx1");
     named_mtx1.unlock();
     return 0;
 }

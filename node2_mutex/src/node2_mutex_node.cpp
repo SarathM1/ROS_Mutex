@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     ros::Rate loop_rate(1);
     for(int i=5;i>0;i--)
     {
-        ROS_INFO("\tNode2 %d", i);
+        ROS_INFO("Node2 %d", i);
         loop_rate.sleep();
     }
     named_mtx2.unlock();

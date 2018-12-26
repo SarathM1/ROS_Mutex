@@ -1,0 +1,17 @@
+# ~/.tmuxinator/test3.yml
+name: test3
+root: ~/
+# Runs before everything. Use it to start daemons etc.
+pre: rosrun mutex_init mutex_init_node
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: source ~/catkin_ws/devel/setup.zsh
+# pre_window: source ~/catkin_ws/devel/setup.bash
+
+windows:
+  - nodes1,2:
+      layout: main-vertical
+      panes:
+        - rosrun node1_mutex node1_mutex_node
+        - rosrun node2_mutex node2_mutex_node
+  - node3: rosrun other_nodes other_nodes_node
