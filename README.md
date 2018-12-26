@@ -29,8 +29,17 @@ catkin_make
 ```
 
 ## Running the code
+### Using ROS launchfile
 ```sh
 roslaunch mutex_init launchFile.launch
+```
+### Using Tmuxinator
+> Install tmuxinator using `sudo apt install tmuxinator`
+- Edit `~/catkin_ws/src/.tmuxinator.yml` file
+- Start tmux session using commands below
+```sh
+cd ~/catkin_ws/src
+mux .
 ```
 
 ## Notes
