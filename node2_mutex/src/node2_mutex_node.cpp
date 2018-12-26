@@ -10,12 +10,14 @@ int main(int argc, char **argv) {
     named_mtx2.lock();
     ROS_INFO("Node2 running. .");
     ros::init(argc, argv, "talker");
+    ros::NodeHandle nh;
     ros::Rate loop_rate(1);
     for(int i=5;i>0;i--)
     {
-        ROS_INFO("%d", i);
+        ROS_INFO("Node2 %d", i);
         loop_rate.sleep();
     }
     named_mtx2.unlock();
+    named_mutex::remove("mtx2");
     return 0;
 }
