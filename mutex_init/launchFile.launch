@@ -2,4 +2,5 @@
   <node name="mutex_init" pkg="mutex_init" output="screen" type="mutex_init_node"/>
   <node name="node1" pkg="node1_mutex" output="screen" type="node1_mutex_node"/>
   <node name="node2" pkg="node2_mutex" output="screen" type="node2_mutex_node" />
+  <node name="node3" pkg="other_nodes" output="screen" type="other_nodes_node" />
 </launch>
